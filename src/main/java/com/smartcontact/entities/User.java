@@ -30,7 +30,7 @@ public class User {
 	private String Name;
 	
 	@Column(unique = true)
-	@NotBlank(message = "Email Should be Uniqe and not blank")
+	//@NotBlank(message = "Email Should be Uniqe and not blank")
 	private String Email;
 	private String Password;
 	private String ImageUrl;
