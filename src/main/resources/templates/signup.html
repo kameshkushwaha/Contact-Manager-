@@ -25,6 +25,11 @@
 			<th:block th:text="${session.massages}"></th:block> 
 				
 			</div>-->
+
+			<div th:if="${session.massages}">
+				<div th:class="'alert ' + ${session.massages.type}" th:text="${session.massages.content}"></div>
+				 
+			</div>
 			
 			<h2>Sign Up</h2>
 			<form novalidate  th:action="@{/do_register}" method="post" th:object="${user}">
