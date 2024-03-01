@@ -1,5 +1,7 @@
 package com.smartcontact.controlar;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -96,18 +98,10 @@ public class HomeControlar {
 			// Clear the user object after successful registration
 			model.addAttribute("user", new User());
 
-			if (massages != null) {
+			session.setAttribute("massages", new Massages("Successfully Register :)..", "alert-success"));
+			
+			session.removeAttribute("remove");
 
-				session.setAttribute("massages", new Massages("Successfully Register :)..", "alert-success"));
-				//return "signup";
-
-			} else {
-
-				// Remove the attribute if needed
-
-				session.removeAttribute("massages");
-				return "signup";
-			}
 			
 			return "signup";
 

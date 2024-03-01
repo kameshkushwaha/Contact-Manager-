@@ -28,7 +28,8 @@
 
 			<div th:if="${session.massages}">
 				<div th:class="'alert ' + ${session.massages.type}" th:text="${session.massages.content}"></div>
-				 
+
+				<block th:text="${session.remove}"></block>
 			</div>
 			
 			<h2>Sign Up</h2>
